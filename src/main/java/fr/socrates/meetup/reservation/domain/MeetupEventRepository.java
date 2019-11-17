@@ -1,7 +1,7 @@
 package fr.socrates.meetup.reservation.domain;
 
 public interface MeetupEventRepository {
-    MeetupEvent get(final MeetupEventId meetupEventId);
+    Meetup get(final MeetupId meetupId);
 
-    void persist(MeetupEvent meetupEvent);
+    void persist(Meetup meetup);
 }

@@ -15,7 +15,7 @@ final class PersonHasExpressedTheirIntentionToAttendListener {
         var reserveASpotUseCase = new ReserveASpotUseCase(meetupEventRepository);
 
         reserveASpotUseCase.execute(
-            new MeetupEventId(event.meetupEventId),
+            new MeetupId(event.meetupEventId),
             event.personEmail
         );
     }

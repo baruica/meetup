@@ -2,15 +2,15 @@ package fr.socrates.meetup.reservation.domain;
 
 import java.util.UUID;
 
-public final class MeetupEventId {
+public final class MeetupId {
 
     final String value;
 
-    MeetupEventId() {
+    MeetupId() {
         this.value = UUID.randomUUID().toString();
     }
 
-    public MeetupEventId(final String meetupEventId) {
+    public MeetupId(final String meetupEventId) {
         this.value = meetupEventId;
     }
 }

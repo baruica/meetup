@@ -17,12 +17,12 @@ final class RegisterToMeetupEvent {
         this.domainEventPublisher = domainEventPublisher;
     }
 
-    public void execute(Person person, MeetupEventId meetupEventId) throws ReservationException {
-        MeetupEvent meetupEvent = meetupEventRepository.get(meetupEventId);
+    public void execute(Person person, MeetupId meetupId) throws ReservationException {
+        Meetup meetup = meetupEventRepository.get(meetupId);
 
-        Collection<DomainEvent> events = meetupEvent.expressIntentionToAttend(person);
+        Collection<DomainEvent> events = meetup.expressIntentionToAttend(person);
 
-        meetupEventRepository.persist(meetupEvent);
+        meetupEventRepository.persist(meetup);
 
         domainEventPublisher.publishAll(events);
     }

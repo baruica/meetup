@@ -1,8 +1,8 @@
 package fr.socrates.meetup.reservation.use_cases;
 
 import fr.socrates.meetup.DomainEvent;
-import fr.socrates.meetup.reservation.domain.MeetupEvent;
-import fr.socrates.meetup.reservation.domain.MeetupEventId;
+import fr.socrates.meetup.reservation.domain.Meetup;
+import fr.socrates.meetup.reservation.domain.MeetupId;
 import fr.socrates.meetup.reservation.domain.MeetupEventRepository;
 
 import java.util.Collection;
@@ -15,9 +15,9 @@ public final class ReserveASpotUseCase {
         this.meetupEventRepository = meetupEventRepository;
     }
 
-    public void execute(final MeetupEventId meetupEventId, final String personEmail) {
-        MeetupEvent meetupEvent = meetupEventRepository.get(meetupEventId);
+    public void execute(final MeetupId meetupId, final String personEmail) {
+        Meetup meetup = meetupEventRepository.get(meetupId);
 
-        Collection<DomainEvent> events = meetupEvent.reserveASpot(personEmail);
+        Collection<DomainEvent> events = meetup.reserveASpot(personEmail);
     }
 }

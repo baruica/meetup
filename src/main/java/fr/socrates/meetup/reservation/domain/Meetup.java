@@ -5,13 +5,13 @@ import fr.socrates.meetup.DomainEvent;
 import java.util.Collection;
 import java.util.List;
 
-public final class MeetupEvent {
+public final class Meetup {
 
-    private final MeetupEventId id;
+    private final MeetupId id;
     private final IntentionsToAttendMeetupEvent intentionsToAttendMeetupEvent;
 
-    public MeetupEvent() {
-        this.id = new MeetupEventId();
+    public Meetup() {
+        this.id = new MeetupId();
         this.intentionsToAttendMeetupEvent = new IntentionsToAttendMeetupEvent();
     }
 
